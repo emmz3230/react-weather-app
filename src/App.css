@@ -7,13 +7,13 @@ body{
   font-family:"monseratt", sansserif;
 }
 .app{
-  background-image: url(./weather\ background/woodforest);
+  background-image: url("./weatherbackground/deem cloud.jpg");
   background-position: bottom;
   background-size: cover;
   transition: 0.4 ease-in-out;
 }
 .app.warm{
-  background-image: url();
+  background-image: url("./weather-bg/deem-cloud.jpg");
 }
 main{
   min-height:100vh;
