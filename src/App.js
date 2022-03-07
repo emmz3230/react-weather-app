@@ -1,8 +1,7 @@
-import React  from 'react';
-import './App.css';
-// import React from 'react';
+import React, { useState }  from 'react';
 
-// go openweather to get the apikey 
+
+// go openweather to get the apikey (fake weather api) 
 const api ={
   key : '562054230351bd3897847fcd5e0dc379',
   base: "http://api.openweathermap.org/data/2.5/"
@@ -14,24 +13,26 @@ function App() {
 
 
   const search = evt =>{
-    if (evt.key === "enter"){
-      fetch(`{Api.base}weather?q=$(query)&units=metric&AppID=${api.key}`)
+    if (evt.key === "Enter"){
+      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
       .then(res => res.json())
-      .then(result =>{ setWeather(result);
+      .then(result =>{ 
+        setWeather(result);
+        console.log(result);
       setQuery('');
       });
     }
   }
 
   const dateBuilder = (d) => {
-    let month = ["january","Febuary","March","April","May","June",
+    let months = ["January","Febuary","March","April","May","June",
     "July", "September", "October", "November", "December"
   ];
   let days = ["Sunday", "Monday", "Tuesday","wednesday", "Thursday", "Friday", "Saturday"];
   
   let day = days[d.getDay()];
   let date = d.getDate();
-  let months = months[d.getMonths()];
+  let month = months[d.getMonth()];
   let year = d.getFullYear();
 
   return `${day} ${date} ${month} ${year}`
@@ -46,7 +47,7 @@ function App() {
           type= "text"
           className='search-bar'
           placeholder='search...'
-          onchange ={e => setQuery(e.target.value)}
+          onChange ={e => setQuery(e.target.value)}
           value = {query}
           onKeyPress={search}
           />
@@ -57,7 +58,7 @@ function App() {
         <div className='location'>{weather.name},{weather.sys.country}</div>
         <div className='date'>{dateBuilder(new Date())}</div>
         </div>
-        <div classname="weather-box">
+        <div className="weather-box">
           <div className='temp'>
             {Math.round(weather.main.temp)}°C
           </div>

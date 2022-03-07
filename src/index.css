@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,96 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+*{
+  margin :0;
+  padding:0;
+  box-sizing: border-box;
 }
+body{
+  font-family:"monseratt", sansserif;
+}
+.app{
+  background-image: url("./weather-bg/wood-forest.jpg");
+  background-position: bottom;
+  background-size: cover;
+  transition: 0.4 ease;
+}
+.app.warm{
+  background-image: url("./weather-bg/deem-cloud.jpg");
+}
+main{
+  min-height:100vh;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.2),rgba(0,0,0,0.75));
+  padding-top: -25px;
+}
+.search-box .search-bar {
+  display:block;
+  width: 500px;
+  padding: 15px;
+  margin-left: 250px;
+  
+
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 0px 0px 16px 16px;
+  margin-top: -5px;
+
+  box-shadow:0px 5px rgba(0,0,0,0.2);
+
+  color: #313131;
+  font-size: 20px;
+
+  transition: 0.4s ease;
+}
+.search-box .search-bar:focus {
+  background-color: rgba(255,255,255,0.75);
+}
+ .location-box .location{
+  color:#fff;
+  font-size: 20px;
+  font-style:italic;
+  text-align:center;
+  text-shadow:2px 2px rgba(50,50,70,0.5);
+ }
+
+ .location-box .date{
+   color:#fff;
+   font-size:20px;
+   font-weight:300;
+   font-style:italic;
+   text-align: center;
+   text-shadow: 2px 2px rgba(50,50,70,0.5);
+ }
+ .weather-box{
+   text-align: center;
+
+ }
+ .weather-box .temp{
+   position: relative;
+   display:inline-block;
+   margin:30px auto;
+   background-color: rgba(225,225,255,0.2);
+   border: radius 16px;
+
+   padding: 15px,25px;
+
+   color: #fff;
+   font-size:102px;
+   font-weight:900;
+  
+   text-shadow:3px 6px rgba(50,50,70,0.5);
+  text-align:center;
+  box-shadow:3px 6px rgba(0,0,0,0.2);
+ }
+
+ .weather-box .weather{
+   color:#fff;
+   font-size:48px;
+   font-weight:700;
+   text-shadow:3px 3px rgba(50,50,70,0.5);
+ }
